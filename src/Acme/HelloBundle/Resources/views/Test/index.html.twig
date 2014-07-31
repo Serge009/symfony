@@ -1,0 +1,16 @@
+{# src/Acme/HelloBundle/Resources/views/Hello/index.html.twig #}
+{% extends '::base.html.twig' %}
+{% block body %}
+    name =  {{ name }}, type = {{ type }}!
+
+{% for flashMessage in app.session.flashbag.get('msg') %}
+    <div class="flash-notice">
+        {{ flashMessage }}
+    </div>
+{% endfor %}
+    {% for flashMessage in app.session.flashbag.get('msg1') %}
+        <div class="flash-notice">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+{% endblock %}
