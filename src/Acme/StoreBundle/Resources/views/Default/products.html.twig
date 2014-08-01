@@ -1,0 +1,11 @@
+{% extends '::base.html.twig' %}
+{% block title %}List of Products{% endblock %}
+{% block body %}
+    {% for product in products %}
+        name = {{ product.name }}, id = {{ product.id }},
+        {% if product.category %}
+        category = {{ product.category.name }}
+        {% endif %}
+        <br />
+    {% endfor %}
+{% endblock %}
